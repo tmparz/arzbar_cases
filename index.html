@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>阿茲 Arzbar｜實戰案例</title>
+<meta name="description" content="阿茲 Arzbar 實戰案例。從支付、旅遊、企業電商、政府專案到 AI 與 LINE 工作流，整理問題、解法與實際成果。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Press+Start+2P&display=swap">
+<style>
+:root{--bg:#f4eadc;--paper:#fff7ec;--paper2:#ead8c6;--ink:#2e211b;--muted:#7c6658;--terra:#b85f3c;--terra2:#d7835d;--ochre:#e2bd62;--sage:#8d9a77;--line:#cdb49e;--pixel:"Press Start 2P",ui-monospace,monospace;--sans:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(rgba(46,33,27,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(46,33,27,.055) 1px,transparent 1px),var(--bg);background-size:24px 24px;color:var(--ink);font-family:var(--sans);line-height:1.75}a{color:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.tag{font:700 10px/1.5 var(--pixel);letter-spacing:.03em}.muted{color:var(--muted)}.frame{border:3px solid var(--ink);background:var(--paper);box-shadow:8px 8px 0 var(--ink)}.pixel-corners{clip-path:polygon(0 10px,10px 10px,10px 0,calc(100% - 10px) 0,calc(100% - 10px) 10px,100% 10px,100% calc(100% - 10px),calc(100% - 10px) calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,10px calc(100% - 10px),0 calc(100% - 10px))}
+.hud{position:sticky;top:0;z-index:20;background:rgba(244,234,220,.95);backdrop-filter:blur(10px);border-bottom:3px solid var(--ink)}.hud-row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;min-height:74px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:900}.avatar{width:42px;height:42px;display:grid;place-items:center;background:var(--terra);color:var(--paper);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);font:700 14px var(--pixel)}.brand small{display:block;color:var(--muted);font:400 9px/1.5 var(--pixel);margin-top:4px}.progress-shell{height:16px;border:3px solid var(--ink);background:var(--paper);padding:2px}.progress{height:100%;width:0;background:repeating-linear-gradient(90deg,var(--terra) 0 12px,var(--terra2) 12px 24px)}.hud-cta{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 14px;background:var(--ochre);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);font-weight:900;text-decoration:none}.hud-cta:active{transform:translate(4px,4px);box-shadow:none}
+.hero{padding:64px 0 36px}.world{display:inline-flex;padding:9px 12px;background:var(--ink);color:var(--paper);font:700 9px var(--pixel)}.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:38px;align-items:center;margin-top:26px}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(44px,7vw,82px);line-height:1.08;letter-spacing:-.04em;margin-bottom:22px}.hero-copy{font-size:19px;color:var(--muted);max-width:40em}.hero-copy strong{color:var(--ink)}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 20px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);font-weight:900;text-decoration:none;background:var(--paper)}.btn.primary{background:var(--terra);color:#fff7ec}.btn:active{transform:translate(6px,6px);box-shadow:none}.console{padding:22px;background:var(--paper2)}.console-head{display:flex;justify-content:space-between;gap:12px;border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:16px}.console-screen{min-height:320px;background:var(--ink);color:#f8e9d8;padding:22px;display:grid;align-content:space-between;position:relative;overflow:hidden}.console-screen:before{content:"";position:absolute;width:74px;height:74px;right:20px;top:20px;background:var(--terra);box-shadow:-18px 18px 0 var(--ochre),-36px 36px 0 var(--sage)}.console-code{position:relative;z-index:2;font:400 10px/2 var(--pixel);max-width:75%}.console-title{position:relative;z-index:2;font-weight:900;font-size:clamp(26px,4vw,42px);line-height:1.2;max-width:9em;margin:0}
+.scene{padding:92px 0 12px;scroll-margin-top:86px}.scene-head{display:grid;grid-template-columns:160px 1fr;gap:30px;align-items:start;margin-bottom:30px}.scene-no{display:inline-grid;place-items:center;width:92px;height:92px;background:var(--ochre);border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);font:700 13px var(--pixel);text-align:center}.scene h2{font-size:clamp(34px,5vw,58px);line-height:1.16;letter-spacing:-.03em;margin-bottom:12px}.scene-lede{font-size:18px;color:var(--muted);max-width:45em}
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.case{padding:28px;position:relative;overflow:hidden}.case:before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:9px;background:linear-gradient(90deg,var(--terra) 0 33%,var(--ochre) 33% 66%,var(--sage) 66%)}.case-type{font:700 8px var(--pixel);color:var(--terra);margin:10px 0 16px}.case h3{font-size:29px;line-height:1.25;margin-bottom:14px}.case p{color:var(--muted)}.case strong{color:var(--ink)}.facts{display:grid;gap:10px;margin-top:18px}.fact{border:3px solid var(--ink);padding:12px 14px;background:#fffaf0}.fact span{display:block;font:700 8px var(--pixel);color:var(--terra);margin-bottom:6px}.fact p{margin:0;color:var(--ink)}
+.timeline{display:grid;gap:18px}.year{display:grid;grid-template-columns:160px 1fr;gap:18px}.year-label{padding:20px;display:grid;place-items:center;background:var(--terra);color:#fff7ec;font:700 11px var(--pixel)}.year-body{padding:24px}.year-body h3{margin-bottom:8px;font-size:25px}.year-body p{margin:0;color:var(--muted)}
+.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.tile{padding:22px;min-height:200px}.tile .n{font:700 9px var(--pixel);color:var(--terra)}.tile h3{font-size:25px;margin:12px 0 8px}.tile p{color:var(--muted);margin:0}
+.final{padding:110px 0 80px}.final-card{padding:clamp(30px,6vw,64px);background:var(--ink);color:#fff7ec;position:relative;overflow:hidden}.final-card:before{content:"";position:absolute;width:210px;height:210px;background:var(--terra);right:-30px;top:-30px;box-shadow:-40px 40px 0 var(--ochre),-80px 80px 0 var(--sage);opacity:.92}.final-inner{position:relative;z-index:2;max-width:700px}.final h2{font-size:clamp(40px,6vw,70px);line-height:1.08;margin:18px 0}.final p{font-size:18px;color:#e5d2c2;max-width:36em}.final .btn{margin-top:24px;background:var(--ochre);color:var(--ink)}footer{padding:26px 0 46px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.scene-head{grid-template-columns:110px 1fr}.matrix{grid-template-columns:1fr 1fr}.year{grid-template-columns:1fr}.year-label{min-height:70px}}
+@media(max-width:680px){.wrap{width:min(100% - 22px,1120px)}.hud-row{grid-template-columns:auto 1fr;min-height:68px}.progress-shell{display:none}.brand span:last-child{display:none}.hero{padding-top:42px}.scene{padding-top:72px}.scene-head{grid-template-columns:1fr;gap:18px}.scene-no{width:76px;height:76px}.case-grid,.matrix{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hud"><div class="wrap hud-row">
+<a class="brand" href="https://tmparz.github.io"><span class="avatar">AZ</span><span>阿茲 Arzbar<small>AI PROBLEM SOLVER</small></span></a>
+<div class="progress-shell"><div id="progress" class="progress"></div></div>
+<a class="hud-cta" href="https://tmparz.github.io">回主頁</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<span class="world">WORLD 02 · CASE ARCHIVE</span>
+<div class="hero-grid">
+<div>
+<p class="tag muted">ARZBAR · REAL CASES</p>
+<h1>案例不是炫技，<br>是看問題怎麼被<br><span style="color:var(--terra)">拆開、接起來、跑起來。</span></h1>
+<p class="hero-copy">這裡整理我與團隊過往做過的專案。從支付、旅遊、企業電商、政府數位專案，到今天的 AI、LINE OA 與自動化，技術一直變，但底層都在處理同一件事：<strong>讓資料、流程與人真的能一起工作。</strong></p>
+<div class="hero-actions"><a class="btn primary" href="#cases">開始看案例 ↓</a><a class="btn" href="https://lin.ee/8PAjp8A" target="_blank" rel="noopener">帶一個問題來</a></div>
+</div>
+<div class="console frame pixel-corners"><div class="console-head"><span class="tag">CASE LOG</span><span class="tag muted">20+ YEARS</span></div><div class="console-screen"><div class="console-code">SCAN: 問題<br>MAP: 流程<br>LINK: API / DATA / SYSTEM<br>VERIFY: RESULT</div><p class="console-title">每一個案例，<br>都先有一個<br>卡住的現場。</p></div></div>
+</div></div></section>
+
+<section id="cases" class="scene"><div class="wrap">
+<div class="scene-head"><div class="scene-no">CASE<br>01</div><div><p class="tag muted">FINTECH × PAYMENT</p><h2>跨境匯款 × 全家 EC 繳費 × AML</h2><p class="scene-lede">當支付不是只有「串 API」，真正難的是交易狀態、條碼、銷帳、AML 與第三方平台之間要能一致。</p></div></div>
+<div class="case-grid">
+<article class="case frame"><p class="case-type">CLIENT / 美家人力</p><h3>問題：移工支付流程不順，跨系統狀態又容易失真</h3><p>服務東南亞移工的跨境匯款流程，原本受限於既有第三方支付。真正的難點不是單一付款介面，而是<strong>全家 EC 給號、POS、AML 與銷帳 Callback</strong>之間的狀態必須一致。</p></article>
+<article class="case frame"><p class="case-type">SOLUTION</p><h3>解法：把交易狀態變成一條可驗證的資料流</h3><p>整合便利商店代碼繳費與條碼流程，建立 Callback、自動銷案與 POS 對帳邏輯，並針對條碼失效、回傳失敗與高交易量情境處理例外。</p><div class="facts"><div class="fact"><span>FOCUS</span><p>API 串接、AML、銷帳、自動回傳</p></div><div class="fact"><span>SCALE</span><p>單一客戶月交易量約萬筆等級</p></div></div></article>
+</div></div></section>
+
+<section class="scene"><div class="wrap">
+<div class="scene-head"><div class="scene-no">CASE<br>02</div><div><p class="tag muted">TRAVEL × DISTRIBUTION</p><h2>賞鯨訂位 × 同業分銷 × 後台效能</h2><p class="scene-lede">旅遊業的問題不只在前台訂票，而是不同經銷商、價格、航班、接送與報表怎麼一起運作。</p></div></div>
+<div class="case-grid">
+<article class="case frame"><p class="case-type">CLIENT / 多羅滿賞鯨</p><h3>問題：同業訂票人工化，統計與後台容易卡住</h3><p>合作旅行社與同業沒有獨立追蹤方式，訂位、接送、伴手禮與統計分散；報表運算也容易造成 PHP 程序阻塞。</p></article>
+<article class="case frame"><p class="case-type">SOLUTION</p><h3>解法：把分銷關係與營運流程放進同一套系統</h3><p>建立 A/B/C 級同業、專屬分銷網址與 QR Code，串接航班訂位、購物車與接送設定，同時重構後台程序，降低報表造成的系統阻塞。</p><div class="facts"><div class="fact"><span>FOCUS</span><p>分銷、訂位、統計、伺服器流程</p></div></div></article>
+</div></div></section>
+
+<section class="scene"><div class="wrap">
+<div class="scene-head"><div class="scene-no">CASE<br>03</div><div><p class="tag muted">AI × KNOWLEDGE</p><h2>LINE 對話 × 摘要 × 企業知識庫</h2><p class="scene-lede">聊天很多不代表資訊很多。真正要做的是把訊息變成可追蹤、可搜尋、可再利用的知識。</p></div></div>
+<div class="case-grid">
+<article class="case frame"><p class="case-type">PROBLEM</p><h3>問題：群組訊息過多，重點與待辦容易被洗掉</h3><p>日常溝通存在 LINE 群組裡，決策、待辦與重要資訊高度依賴人工回找。</p></article>
+<article class="case frame"><p class="case-type">SOLUTION</p><h3>解法：讓對話自動沉澱成結構化資訊</h3><p>設計 LINE Chat Bot 蒐集對話，進行雜訊過濾、關鍵字擷取與活躍度分析，並自動產生日／週摘要，可匯入企業知識庫。</p><div class="facts"><div class="fact"><span>OUTPUT</span><p>PDF / Excel 摘要、關鍵資訊、知識沉澱</p></div></div></article>
+</div></div></section>
+
+<section class="scene"><div class="wrap">
+<div class="scene-head"><div class="scene-no">CASE<br>04</div><div><p class="tag muted">ENTERPRISE × DIGITAL</p><h2>大型企業電商與數位轉型</h2><p class="scene-lede">從企業官網、商城、Intranet 到 O2O，核心都不是「做一個網站」，而是企業怎麼把服務、資料與營運流程數位化。</p></div></div>
+<div class="matrix">
+<article class="tile frame"><span class="n">01</span><h3>統一企業</h3><p>企業內部網路規劃與電子商務平台建置執行。</p></article>
+<article class="tile frame"><span class="n">02</span><h3>台灣卡西歐</h3><p>官方形象網站、MyCASIO 線上商城與企業 e 化相關專案。</p></article>
+<article class="tile frame"><span class="n">03</span><h3>岱妮蠶絲</h3><p>品牌購物網站、商品與訂單後台管理系統。</p></article>
+<article class="tile frame"><span class="n">04</span><h3>英特國際 / SheSay</h3><p>大型購物商城與女性社群網站的早期規劃與開發。</p></article>
+<article class="tile frame"><span class="n">05</span><h3>亞太寬頻</h3><p>雙向簡訊平台架構與通訊服務開發。</p></article>
+<article class="tile frame"><span class="n">06</span><h3>VR / LBS 應用</h3><p>720 度全景、智慧遊園與位置服務等前瞻體驗應用。</p></article>
+</div></div></section>
+
+<section class="scene"><div class="wrap">
+<div class="scene-head"><div class="scene-no">CASE<br>05</div><div><p class="tag muted">GOV × PUBLIC</p><h2>政府、公共與智慧城市專案</h2><p class="scene-lede">這類專案更看重整體架構、跨單位協作與可長期運作性，不只是單一功能。</p></div></div>
+<div class="timeline">
+<div class="year"><div class="year-label frame">PUBLIC 01</div><div class="year-body frame"><h3>行政院研考會</h3><p>城市國際競爭力指標體系與資料庫建構。</p></div></div>
+<div class="year"><div class="year-label frame">PUBLIC 02</div><div class="year-body frame"><h3>台灣鐵路管理局</h3><p>無線上網與電子商務 BOT 商業模式與技術顧問。</p></div></div>
+<div class="year"><div class="year-label frame">PUBLIC 03</div><div class="year-body frame"><h3>金門縣政府</h3><p>金門無線島電子商務與入口網站規劃。</p></div></div>
+<div class="year"><div class="year-label frame">PUBLIC 04</div><div class="year-body frame"><h3>國防部陸軍總部</h3><p>廣域網路 WAN 架構設計與規劃。</p></div></div>
+<div class="year"><div class="year-label frame">PUBLIC 05</div><div class="year-body frame"><h3>教育 / 輔導體系</h3><p>閱讀評量、學習追蹤，以及資策會、中衛發展中心等多項數位服務專案。</p></div></div>
+</div></div></section>
+
+<section class="scene"><div class="wrap">
+<div class="scene-head"><div class="scene-no">PATTERN</div><div><p class="tag muted">WHAT THESE CASES HAVE IN COMMON</p><h2>看起來是不同產業，<br>其實一直在解同一種問題。</h2><p class="scene-lede">從 20 年前到現在，工具變很多，但專案底層一直重複出現同樣幾件事。</p></div></div>
+<div class="matrix">
+<article class="tile frame"><span class="n">01</span><h3>資料分散</h3><p>資訊散在不同系統、表單、對話與人腦裡。</p></article>
+<article class="tile frame"><span class="n">02</span><h3>流程斷裂</h3><p>每一步都能做，但中間要靠人手動搬運。</p></article>
+<article class="tile frame"><span class="n">03</span><h3>狀態不一致</h3><p>支付、訂單、會員與後台對不上，問題難追。</p></article>
+<article class="tile frame"><span class="n">04</span><h3>重複人工</h3><p>人一直在做核對、輸入、提醒、轉貼與追蹤。</p></article>
+<article class="tile frame"><span class="n">05</span><h3>系統彼此不說話</h3><p>工具很多，但沒有 API、Webhook 或流程把它們接起來。</p></article>
+<article class="tile frame"><span class="n">06</span><h3>真正的解法</h3><p>先拆問題，再決定 AI、自動化、API 與資料系統該放哪裡。</p></article>
+</div></div></section>
+
+<section class="final"><div class="wrap"><div class="final-card frame pixel-corners"><div class="final-inner">
+<p class="tag">NEXT CASE · YOUR BUSINESS</p><h2>下一個案例，<br>可以從你現在最卡的流程開始。</h2><p>不用先想該用哪個 AI，也不用先決定要不要做系統。把現況、最浪費時間的一步，以及你想改善的結果告訴我，我會先從問題本身開始拆。</p><a class="btn" href="https://lin.ee/8PAjp8A" target="_blank" rel="noopener">加 LINE 找阿茲聊聊 →</a>
+</div></div></div></section>
+</main>
+<footer class="wrap"><span>© 2026 阿茲 Arzbar · Case Archive</span><span class="tag">PROBLEM → FLOW → SYSTEM → RESULT</span></footer>
+<script>
+(function(){var bar=document.getElementById('progress');function update(){var doc=document.documentElement,max=doc.scrollHeight-doc.clientHeight,p=max>0?(doc.scrollTop/max)*100:0;bar.style.width=Math.max(0,Math.min(100,p))+'%'}update();document.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);})();
+</script>
+</body>
+</html>
