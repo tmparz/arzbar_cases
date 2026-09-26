@@ -65,7 +65,16 @@
 </div></div></section>
 
 <section class="scene"><div class="wrap">
-<div class="scene-head"><div class="scene-no">CASE<br>04</div><div><p class="tag muted">ENTERPRISE × DIGITAL</p><h2>大型企業電商與數位轉型</h2><p class="scene-lede">從企業官網、商城、Intranet 到 O2O，核心都不是「做一個網站」，而是企業怎麼把服務、資料與營運流程數位化。</p></div></div>
+<div class="scene-head"><div class="scene-no">CASE<br>04</div><div><p class="tag muted">LINE × BOOKING × WORKFLOW</p><h2>LINE 場地預約：不是做一張表單，<br>而是把整段人工協調拿掉。</h2><p class="scene-lede">使用者真正的問題不是「沒有預約頁面」，而是詢問空檔、核對場地、登記、避免撞期、通知與後續管理，全都需要人一直確認。</p></div></div>
+<div class="case-grid">
+<article class="case frame"><p class="case-type">PROBLEM / 從現場問題開始</p><h3>問題：每一次預約，都在消耗管理者的時間</h3><p>傳統場地預約常變成一連串人工對話：<strong>「哪天有空？」→「可以訂多久？」→「這時段有人了嗎？」→「幫我登記」→「記得提醒我」</strong>。真正要解的不是表單，而是這整條反覆確認的工作流程。</p><div class="facts"><div class="fact"><span>PAIN POINT</span><p>人工查空檔、時段衝突、重複登記、提醒與資料整理</p></div></div></article>
+<article class="case frame"><p class="case-type">THINKING / 問題解決師視角</p><h3>先拆流程，再決定 LINE、LIFF 與資料庫放在哪裡</h3><p>把預約拆成「身份 → 場地 → 日期 → 可用時段 → 建立預約 → 通知 → 提醒 → 管理」，再把營業時間、場地規則、例外日與衝突檢查交給系統判斷。<strong>工具不是起點，流程才是。</strong></p></article>
+<article class="case frame"><p class="case-type">SOLUTION / 把流程接起來</p><h3>解法：讓使用者在 LINE 裡完成預約，讓系統處理後面的事</h3><p>透過 LINE Webhook 與 LIFF 串接使用者流程，由時段引擎計算可預約區間，Cloudflare D1 保存會員、場地與預約狀態；完成後再進入通知、排程提醒、取消／延長與後台管理。</p><div class="facts"><div class="fact"><span>FLOW</span><p>LINE → LIFF → 選場地 → 選日期／時段 → 預約 → D1 → 通知／提醒</p></div><div class="fact"><span>STACK</span><p>Cloudflare Workers · Hono · D1 · LINE Messaging API · LIFF</p></div></div></article>
+<article class="case frame"><p class="case-type">RESULT / 真正被解掉的問題</p><h3>成果不是「多一套系統」，而是少掉一段人工工作</h3><p>系統可以處理可用時段、衝突判斷、例外日期、預約狀態、排程提醒、取消與延長；管理端也能查詢、管理與匯出資料，延長操作保留稽核紀錄。管理者不必再當人工轉接站。</p><div class="facts"><div class="fact"><span>VALUE</span><p>降低重複確認，把預約規則標準化，讓服務可以持續運作</p></div></div></article>
+</div></div></section>
+
+<section class="scene"><div class="wrap">
+<div class="scene-head"><div class="scene-no">CASE<br>05</div><div><p class="tag muted">ENTERPRISE × DIGITAL</p><h2>大型企業電商與數位轉型</h2><p class="scene-lede">從企業官網、商城、Intranet 到 O2O，核心都不是「做一個網站」，而是企業怎麼把服務、資料與營運流程數位化。</p></div></div>
 <div class="matrix">
 <article class="tile frame"><span class="n">01</span><h3>統一企業</h3><p>企業內部網路規劃與電子商務平台建置執行。</p></article>
 <article class="tile frame"><span class="n">02</span><h3>台灣卡西歐</h3><p>官方形象網站、MyCASIO 線上商城與企業 e 化相關專案。</p></article>
@@ -76,7 +85,7 @@
 </div></div></section>
 
 <section class="scene"><div class="wrap">
-<div class="scene-head"><div class="scene-no">CASE<br>05</div><div><p class="tag muted">GOV × PUBLIC</p><h2>政府、公共與智慧城市專案</h2><p class="scene-lede">這類專案更看重整體架構、跨單位協作與可長期運作性，不只是單一功能。</p></div></div>
+<div class="scene-head"><div class="scene-no">CASE<br>06</div><div><p class="tag muted">GOV × PUBLIC</p><h2>政府、公共與智慧城市專案</h2><p class="scene-lede">這類專案更看重整體架構、跨單位協作與可長期運作性，不只是單一功能。</p></div></div>
 <div class="timeline">
 <div class="year"><div class="year-label frame">PUBLIC 01</div><div class="year-body frame"><h3>行政院研考會</h3><p>城市國際競爭力指標體系與資料庫建構。</p></div></div>
 <div class="year"><div class="year-label frame">PUBLIC 02</div><div class="year-body frame"><h3>台灣鐵路管理局</h3><p>無線上網與電子商務 BOT 商業模式與技術顧問。</p></div></div>
